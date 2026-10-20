@@ -1,0 +1,108 @@
+[
+ {
+  "id": "namcs2024",
+  "survey": "NAMCS 2024",
+  "title": "NAMCS 2024 \u2014 Health Center (HC) Component",
+  "unit": "health center visit",
+  "n": 503799,
+  "codebooks": [
+   "codebooks/namcs2024/2024-NAMCS-HC-Component-Codebook.pdf",
+   "codebooks/namcs2024/2024-NAMCS-HC-Component-Technical-Documentation2.pdf"
+  ],
+  "nvars": 75
+ },
+ {
+  "id": "nhis2025_adult",
+  "survey": "NHIS 2025",
+  "title": "NHIS 2025 \u2014 Sample Adult",
+  "unit": "adult",
+  "n": 24215,
+  "codebooks": [
+   "codebooks/nhis2025_adult/Adult-codebook.pdf",
+   "codebooks/nhis2025_adult/Adult-summary.pdf",
+   "codebooks/nhis2025_adult/srvydesc-508.pdf",
+   "codebooks/nhis2025_adult/NHIS-PairWeights-README.txt"
+  ],
+  "nvars": 578
+ },
+ {
+  "id": "nhis2025_child",
+  "survey": "NHIS 2025",
+  "title": "NHIS 2025 \u2014 Sample Child",
+  "unit": "child",
+  "n": 6049,
+  "codebooks": [
+   "codebooks/nhis2025_child/Child-codebook.pdf",
+   "codebooks/nhis2025_child/Child-summary.pdf",
+   "codebooks/nhis2025_child/srvydesc-508.pdf",
+   "codebooks/nhis2025_child/NHIS-PairWeights-README.txt"
+  ],
+  "nvars": 356
+ },
+ {
+  "id": "nhis2025_adultinc",
+  "survey": "NHIS 2025",
+  "title": "NHIS 2025 \u2014 Sample Adult Imputed Income (10 implicates)",
+  "unit": "adult \u00d7 implicate",
+  "n": 242150,
+  "codebooks": [
+   "codebooks/nhis2025_adultinc/Adultinc-summary.pdf",
+   "codebooks/nhis2025_adultinc/NHIS2025-imputation-techdoc-508.pdf"
+  ],
+  "nvars": 10
+ },
+ {
+  "id": "nhis2025_childinc",
+  "survey": "NHIS 2025",
+  "title": "NHIS 2025 \u2014 Sample Child Imputed Income (10 implicates)",
+  "unit": "child \u00d7 implicate",
+  "n": 60490,
+  "codebooks": [
+   "codebooks/nhis2025_childinc/Childinc-summary.pdf",
+   "codebooks/nhis2025_childinc/NHIS2025-imputation-techdoc-508.pdf"
+  ],
+  "nvars": 10
+ },
+ {
+  "id": "nhis2025_paradata",
+  "survey": "NHIS 2025",
+  "title": "NHIS 2025 \u2014 Paradata",
+  "unit": "household interview",
+  "n": 58229,
+  "codebooks": [
+   "codebooks/nhis2025_paradata/Paradata-codebook.pdf",
+   "codebooks/nhis2025_paradata/Paradata-summary.pdf",
+   "codebooks/nhis2025_paradata/srvydescr-paradata-508.pdf"
+  ],
+  "nvars": 123
+ },
+ {
+  "id": "rss7",
+  "survey": "RSS Round 7",
+  "title": "NCHS Rapid Surveys System \u2014 Round 7 (Jul\u2013Aug 2025)",
+  "unit": "adult panelist",
+  "n": 8118,
+  "codebooks": [
+   "codebooks/rss7/codebook.pdf",
+   "codebooks/rss7/questionnaire.pdf",
+   "codebooks/rss7/RSS7-SurveyDescription.pdf"
+  ],
+  "nvars": 231
+ },
+ {
+  "id": "brfss2024",
+  "survey": "BRFSS 2024",
+  "title": "BRFSS 2024 \u2014 Land-line & Cell-phone (LLCP)",
+  "unit": "adult respondent",
+  "n": 457670,
+  "codebooks": [
+   "codebooks/brfss2024/USCODE24_LLCP_082125.HTML",
+   "codebooks/brfss2024/2024-Weighting-Description-508.pdf",
+   "codebooks/brfss2024/Overview_2024-508.pdf",
+   "codebooks/brfss2024/llcp_varlayout_24_onecolumn.html",
+   "codebooks/brfss2024/summary_matrix_24.html",
+   "codebooks/brfss2024/llcp_multiq.html"
+  ],
+  "nvars": 301
+ }
+]

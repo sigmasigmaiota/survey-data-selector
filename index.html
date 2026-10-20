@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Survey Data Selector</title>
+<meta name="description" content="Choose variables from NAMCS 2024, NHIS 2025, BRFSS 2024 and RSS Round 7 public-use files and download them with survey weights and codebooks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='5' fill='%2314233C'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' stroke='%23F0B429' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#vars">Skip to variable list</a>
+<header class="masthead">
+  <div class="wrap">
+    <h1>Survey Data Selector</h1>
+    <p class="lede">Pick the variables you need from a public-use health survey, then download them as one file. Each download already contains the survey weight and design variables, plus a codebook for the variables you chose.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="pickers" aria-label="Choose a dataset">
+    <h2 class="step-h">Choose a survey</h2>
+    <div class="surveys" id="surveys" role="radiogroup" aria-label="Survey"></div>
+    <div class="files" id="files" hidden>
+      <label for="fileSel">File</label>
+      <select id="fileSel"></select>
+    </div>
+    <p class="ds-desc" id="dsDesc"></p>
+  </section>
+
+  <div class="grid">
+    <section class="varpanel" id="vars" aria-label="Variables">
+      <div class="toolbar">
+        <div class="search">
+          <label for="q" class="sr">Search variables</label>
+          <input id="q" type="search" placeholder="Search names, labels and question text (e.g. diabetes, smok, AGE)" autocomplete="off">
+        </div>
+        <div class="filters">
+          <label class="sectionsel" id="sectionWrap" hidden><span class="sr">Section</span>
+            <select id="section"><option value="">All sections</option></select>
+          </label>
+          <label class="chk"><input type="checkbox" id="onlySel"> Selected only</label>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <ul class="varlist" id="varlist"></ul>
+    </section>
+
+    <aside class="slip" aria-label="Your download">
+      <div class="slip-in">
+        <h2>Your extract</h2>
+        <p class="slip-ds" id="slipDs"></p>
+
+        <h3>Always included</h3>
+        <p class="hint">Survey weight, design and ID variables. You need these for correct estimates and standard errors.</p>
+        <ul class="fixed" id="fixedList"></ul>
+
+        <div id="optWrap" hidden>
+          <h3>Other weights</h3>
+          <p class="hint">Only for the specific analyses described in the documentation.</p>
+          <ul class="optw" id="optList"></ul>
+        </div>
+
+        <h3>Your variables <span class="n" id="selN">0</span></h3>
+        <ul class="chosen" id="chosen"><li class="empty">Tick variables in the list to add them here.</li></ul>
+        <button class="linkbtn" id="clearBtn" type="button" hidden>Clear selection</button>
+
+        <div id="filterWrap" hidden>
+          <h3><label for="filterSel" id="filterLab">Limit rows</label></h3>
+          <select id="filterSel" multiple size="6"></select>
+          <p class="hint" id="filterHint"></p>
+        </div>
+
+        <h3><label for="fmt">Format</label></h3>
+        <select id="fmt">
+          <option value="csv">CSV (opens in R, Excel, SPSS, Stata)</option>
+          <option value="parquet">Parquet (smaller, keeps column types)</option>
+        </select>
+
+        <p class="est" id="est"></p>
+        <div class="actions">
+          <button class="primary" id="dlBtn" type="button" disabled>Download extract</button>
+          <button class="secondary" id="pvBtn" type="button" disabled>Preview 10 rows</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="zipnote">You get a .zip with the data, a codebook for your variables, and an R script that loads the file and sets up the survey design.</p>
+
+        <h3>Full documentation</h3>
+        <ul class="docs" id="docs"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <section class="preview" id="previewSec" hidden aria-label="Preview">
+    <h2 class="step-h">Preview <span class="muted" id="pvNote"></span></h2>
+    <div class="tblwrap"><table id="pvTable"></table></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p>Data are public-use files from the National Center for Health Statistics (NAMCS, NHIS, RSS) and the CDC Behavioral Risk Factor Surveillance System. Cite the original survey in any work you produce. Use these data only for statistical analysis and never try to identify a respondent or health center (NCHS data-use restrictions). Processing happens in your browser; nothing you select is sent anywhere.</p></div>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
